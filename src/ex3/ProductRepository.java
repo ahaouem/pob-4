@@ -18,29 +18,29 @@ public class ProductRepository {
 
     public List<Product> sortProductsByName() {
         return products.stream()
-                .sorted(Comparator.comparing(Product::getName))
+                .sorted(Comparator.comparing(Product::name))
                 .collect(Collectors.toList());
     }
 
     public List<Product> sortProductsByPriceDescending() {
         return products.stream()
-                .sorted(Comparator.comparingDouble(Product::getPrice).reversed())
+                .sorted(Comparator.comparingDouble(Product::price).reversed())
                 .collect(Collectors.toList());
     }
 
     public boolean areAllProductsExpensive(double threshold) {
         return products.stream()
-                .allMatch(product -> product.getPrice() > threshold);
+                .allMatch(product -> product.price() > threshold);
     }
 
     public boolean isAnyProductCheap(double threshold) {
         return products.stream()
-                .anyMatch(product -> product.getPrice() < threshold);
+                .anyMatch(product -> product.price() < threshold);
     }
 
     public List<Product> findProductsByNameContaining(String searchTerm) {
         return products.stream()
-                .filter(product -> product.getName().toLowerCase().contains(searchTerm.toLowerCase()))
+                .filter(product -> product.name().toLowerCase().contains(searchTerm.toLowerCase()))
                 .collect(Collectors.toList());
     }
 }

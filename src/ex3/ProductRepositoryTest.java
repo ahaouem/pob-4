@@ -23,21 +23,21 @@ public class ProductRepositoryTest {
     @Test
     void testSortProductsByName() {
         List<Product> sortedProducts = productRepository.sortProductsByName();
-        assertEquals("Chair", sortedProducts.get(0).getName());
-        assertEquals("Keyboard", sortedProducts.get(1).getName());
-        assertEquals("Laptop", sortedProducts.get(2).getName());
-        assertEquals("Mouse", sortedProducts.get(3).getName());
-        assertEquals("Table", sortedProducts.get(4).getName());
+        assertEquals("Chair", sortedProducts.get(0).name());
+        assertEquals("Keyboard", sortedProducts.get(1).name());
+        assertEquals("Laptop", sortedProducts.get(2).name());
+        assertEquals("Mouse", sortedProducts.get(3).name());
+        assertEquals("Table", sortedProducts.get(4).name());
     }
 
     @Test
     void testSortProductsByPriceDescending() {
         List<Product> sortedProducts = productRepository.sortProductsByPriceDescending();
-        assertEquals("Laptop", sortedProducts.get(0).getName());
-        assertEquals("Table", sortedProducts.get(1).getName());
-        assertEquals("Chair", sortedProducts.get(2).getName());
-        assertEquals("Mouse", sortedProducts.get(3).getName());
-        assertEquals("Keyboard", sortedProducts.get(4).getName());
+        assertEquals("Laptop", sortedProducts.get(0).name());
+        assertEquals("Table", sortedProducts.get(1).name());
+        assertEquals("Chair", sortedProducts.get(2).name());
+        assertEquals("Mouse", sortedProducts.get(3).name());
+        assertEquals("Keyboard", sortedProducts.get(4).name());
     }
 
     @Test
@@ -56,7 +56,7 @@ public class ProductRepositoryTest {
     void testFindProductsByNameContaining() {
         List<Product> foundProducts = productRepository.findProductsByNameContaining("key");
         assertEquals(1, foundProducts.size());
-        assertEquals("Keyboard", foundProducts.get(0).getName());
+        assertEquals("Keyboard", foundProducts.getFirst().name());
     }
 }
 

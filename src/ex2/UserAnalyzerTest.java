@@ -7,12 +7,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class UserAnalyzerTest {
-    private List<User> users;
     private UserAnalyzer userAnalyzer;
 
     @BeforeEach
     void setUp() {
-        users = List.of(
+        List<User> users = List.of(
                 new User("John", "Doe", 30, "USA"),
                 new User("Alice", "Smith", 25, "USA"),
                 new User("Alice", "Howard", 27, "USA"),
@@ -54,15 +53,15 @@ public class UserAnalyzerTest {
     @Test
     void testFindOldestUser() {
         User oldestUser = userAnalyzer.findOldestUser();
-        assertEquals("Michael", oldestUser.getFirstName());
-        assertEquals("Lee", oldestUser.getLastName());
+        assertEquals("Michael", oldestUser.firstName());
+        assertEquals("Lee", oldestUser.lastName());
     }
 
     @Test
     void testFindYoungestUser() {
         User youngestUser = userAnalyzer.findYoungestUser();
-        assertEquals("Emma", youngestUser.getFirstName());
-        assertEquals("Wang", youngestUser.getLastName());
+        assertEquals("Emma", youngestUser.firstName());
+        assertEquals("Wang", youngestUser.lastName());
     }
 
     @Test
